@@ -1,0 +1,19 @@
+galaxy_info:
+  namespace: iorchard
+  role_name: keepalived
+  author: "Heechul Kim <jijisa@iorchard.net>"
+  description: Ansible Role to Install Keepalived for Kubernetes
+  company: iOrchard, Inc.
+  license: Apache-2.0
+  min_ansible_version: "2.10"
+  platforms:
+    - name: Debian
+      versions:
+        - bullseye
+    - name: Ubuntu
+      versions:
+        - focal
+  galaxy_tags:
+    - system
+
+dependencies: []

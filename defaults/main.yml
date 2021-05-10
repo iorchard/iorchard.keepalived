@@ -1,0 +1,5 @@
+---
+# kube-apiserver listening port
+kube_apiserver_bind_port: "6443"
+# keepalived virtual_ipaddress
+keepalived_vip: "192.168.21.120"
