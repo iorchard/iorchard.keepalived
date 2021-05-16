@@ -1,6 +1,6 @@
 vrrp_instance VI_1 {
   state BACKUP
-  interface {{ ansible_default_ipv4.interface }}
+  interface {{ keepalived_interface }}
   virtual_router_id 1
   priority 100
   advert_int 1

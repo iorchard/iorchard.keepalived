@@ -1,5 +1,5 @@
 vrrp_script check_apiserver {
-  script "/usr/bin/nc -w1 -z {{ ansible_default_ipv4.address }} {{ kube_apiserver_bind_port }}"  # apiserver port 6443
+  script "/usr/bin/nc -w1 -z {{ kube_apiserver_advertise_address }} {{ kube_apiserver_bind_port }}"  # apiserver port 6443
   interval 3  # check every 3 seconds
   timeout 1  # seconds after which script is considered to have failed
   fall 3  # require 3 failures for KO
@@ -8,7 +8,7 @@ vrrp_script check_apiserver {
 
 vrrp_instance VI_1 {
   state BACKUP
-  interface {{ ansible_default_ipv4.interface }}
+  interface {{ keepalived_interface }}
   virtual_router_id 1
   priority 100
   advert_int 1
